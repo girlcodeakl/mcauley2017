@@ -3,6 +3,7 @@
   <head>
     <meta charset='utf-8'>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-dateFormat/1.0/jquery.dateFormat.js"></script>
     <title>Message Feed</title>
     <link rel="stylesheet" href="style.css">
   </head>
@@ -15,6 +16,8 @@
 
 var displayMessage = function(post) {
   var postElement = $('<div class="message">' + post.message + '</div>');
+  var timeElement = $('<div class="time">'+ $.format.prettyDate(post.time) +'</div>');
+postElement.append(timeElement);
   $(".message-list").append(postElement);
 }
 
