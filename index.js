@@ -26,10 +26,13 @@ var saveNewPost = function (request, response) {
 
   var post = {};
   post.message = request.body.message;
+  post.image = request.body.URL;
   posts.push(post); //save it in our list
   response.send("thanks for your message. Press back to add another");
 }
 app.post('/posts', saveNewPost);
+
+
 
 //listen for connections on port 3000
 app.listen(3000);
