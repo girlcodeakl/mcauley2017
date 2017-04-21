@@ -18,16 +18,22 @@ h1 {
   border: 2px solid #FFB03B;
   border-radius: 5px;
 }
-.nav-bar{
+
+.nav-bar {
   color: white;
   background-color: black;
   max-width: 400px;
   margin: auto;
 
 }
-.nav-bar a{
+.nav-bar a {
   color: white;
   margin:10px;
   display: inline-block;
   text-decoration:none;
+}
+
+.time {
+  color: #894444;
+
 }
