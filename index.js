@@ -28,7 +28,11 @@ var saveNewPost = function (request, response) {
   var post = {};
   post.message = request.body.message;
   post.author = request.body.author;
+  if (request.body.URL===""){
+    post.image = "https://s-media-cache-ak0.pinimg.com/736x/f3/b8/5b/f3b85bd1a0a6cc2a652db785ca269769.jpg";
+  }else {
   post.image = request.body.URL;
+  }
   post.time = new Date();
   posts.push(post); //save it in our list
   response.send("thanks for your message. Press back to add another");
