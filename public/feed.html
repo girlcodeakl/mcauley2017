@@ -21,6 +21,8 @@
 
 var displayMessage = function(post) {
   var postElement = $('<div class="message">' + post.message + '</div>');
+  var authorElement = $('<div>' + post.author + '</div>');
+  postElement.append(authorElement);
   var imageElement = $('<img src="'+ post.image +'">');
   postElement.append(imageElement);
   var timeElement = $('<div class="time">'+ $.format.prettyDate(post.time) +'</div>');
