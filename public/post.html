@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
+    <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+</head>
     <meta charset='utf-8'>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-      <form method="post" action="/posts">
-          <input type="text" name="message" placeholder="message goes here">
-          <input type="submit" placeholder="Submit">
+      <div class="nav-bar">
+          <a href="feed.html">feed</a>
+          <a href="post.html">post something</a>
+          <a href="index.html"> homepage</a>
+      </div>
+      <form method="post" action="/posts" class="myform">
+          <input type="text" name="message" placeholder="Message goes here" class="messageInput">
+          <input image="picture" name="URL" placeholder="link goes here">
+          <input type="submit" value="Submit">
       </form>
+        <div class="note"></div>
+        <script>
+        var myCoolFunction = function (e) {
+          $(".note").text("Thanks! Your message was saved!");
+          var data = {};
+          data.message = $(".messageInput").val();
+      $.post( "/posts" , data );
+  e.preventDefault();
+  }
+    $(".myform").on("submit", myCoolFunction);
+        </script>
   </body>
 </html>
