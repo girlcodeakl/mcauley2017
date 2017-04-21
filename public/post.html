@@ -14,8 +14,8 @@
       </div>
       <form method="post" action="/posts" class="myform">
           <input type="text" name="message" placeholder="Message goes here" class="messageInput">
-          <input image="picture" name="URL" placeholder="link goes here">
-          <input type="text" name="author" placeholder="author goes here">
+          <input image="picture" name="URL" placeholder="link goes here" class="urlInput">
+          <input type="text" name="author" placeholder="author goes here" class="authorInput">
           <input type="submit" value="Submit">
       </form>
         <div class="note"></div>
@@ -24,6 +24,8 @@
           $(".note").text("Thanks! Your message was saved!");
           var data = {};
           data.message = $(".messageInput").val();
+          data.URL = $(".urlInput").val();
+          data.author = $(".authorInput").val();
       $.post( "/posts" , data );
   e.preventDefault();
   }
