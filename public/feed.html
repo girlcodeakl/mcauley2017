@@ -30,6 +30,10 @@ var displayMessage = function(post) {
   $(".message-list").append(postElement);
   var  idElement  = $('<div>' + post.id +'</div>');
 postElement.append(idElement);
+var inputElement = $('<input type="text">');
+postElement.append(inputElement);
+var buttonElement = $('<button> Post </button>');
+postElement.append(buttonElement);
 postElement.delegate("button", "click", function() {
     alert(postElement.find("input").val());
 });
