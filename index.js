@@ -20,12 +20,24 @@ var sendPostsList = function (request, response) {
 }
 app.get('/posts', sendPostsList);
 
+app.get('/post', function (req, res) {
+   var searchId = req.query.id;
+   console.log("Searching for post " + searchId);
+   var filterFunction = function (post) {
+      return post.id == searchId;
+   };
+   var post = posts.find(filterFunction);
+   res.send(post);
+});
+
+
 //let a client POST something new
 var saveNewPost = function (request, response) {
   console.log(request.body.message); //write it on the command prompt so we can see
   console.log(request.body.author); //write it on the command prompt so we can see
 
-  var post = {};
+  var post = {}
+  post.id = Math.round(Math.random() * 10000);
   post.message = request.body.message;
   post.author = request.body.author;
   if (request.body.URL===""){
