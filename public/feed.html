@@ -30,6 +30,9 @@ var displayMessage = function(post) {
   $(".message-list").append(postElement);
   var  idElement  = $('<div>' + post.id +'</div>');
 postElement.append(idElement);
+postElement.delegate("button", "click", function() {
+    alert(postElement.find("input").val());
+});
 }
 
 var createFeed = function(data) {
