@@ -48,6 +48,10 @@ var saveNewPost = function (request, response) {
   post.image = request.body.URL;
   }
   post.time = new Date();
+  post.comments = [];
+   //add a fake comment to every post
+  post.comments.push("Great question!");
+  post.comments.push("Good question!");
   posts.push(post); //save it in our list
   var dbPosts = database.collection('posts');
 dbPosts.insert(post);
