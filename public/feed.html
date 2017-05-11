@@ -20,16 +20,25 @@
   <script>
   //Hello! This is the start of the JavaScript.
 
-  var displayMessage = function(post) {
-    var postElement = $('<div class="message">' + post.message + '</div>');
-    var authorElement = $('<div>' + post.author + '</div>');
-    postElement.append(authorElement);
-    var imageElement = $('<img src="'+ post.image +'">');
-    postElement.append(imageElement);
-    var timeElement = $('<div class="time">'+ $.format.prettyDate(post.time) +'</div>');
-    postElement.append(timeElement);
-    $(".message-list").append(postElement);
-  }
+var displayMessage = function(post) {
+  var postElement = $('<div class="message">' + post.message + '</div>');
+  var authorElement = $('<div>' + post.author + '</div>');
+  postElement.append(authorElement);
+  var imageElement = $('<img src="'+ post.image +'">');
+  postElement.append(imageElement);
+  var timeElement = $('<div class="time">'+ $.format.prettyDate(post.time) +'</div>');
+  postElement.append(timeElement);
+  $(".message-list").append(postElement);
+  var  idElement  = $('<div>' + post.id +'</div>');
+postElement.append(idElement);
+var inputElement = $('<input type="text">');
+postElement.append(inputElement);
+var buttonElement = $('<button> Post </button>');
+postElement.append(buttonElement);
+postElement.delegate("button", "click", function() {
+    alert(postElement.find("input").val());
+});
+}
 
   var createFeed = function(data) {
     data.reverse();
