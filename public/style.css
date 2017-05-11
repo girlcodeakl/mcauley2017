@@ -41,6 +41,7 @@ h1 {
 img {
   width: 400px;
 }
+
 input[type=text] {
     color: red;
 }
@@ -51,4 +52,8 @@ input[type=submit] {
 }
 .urlInput {
   margin-top: 20px
+}
+
+.hidden {
+  display: none
 }
