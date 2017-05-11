@@ -3,32 +3,32 @@ body {
 }
 
 .message-list {
-  background-color: #FFF0A5;
+  background-color:#baadae;
   padding: 20px;
 }
 
 h1 {
-  color: #FFB03B;
+  color: #bc1229;
 }
 
 .message {
   color: #468966;
-  margin: 10px;
-  padding: 10px;
-  border: 2px solid #FFB03B;
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid white;
   border-radius: 5px;
 }
 
 .nav-bar {
   color: white;
-  background-color: black;
+  background-color: #bc1229;
   max-width: 400px;
   margin: auto;
 
 }
 .nav-bar a {
   color: white;
-  margin:10px;
+  margin:20px;
   display: inline-block;
   text-decoration:none;
 }
@@ -40,6 +40,18 @@ h1 {
 
 img {
   width: 400px;
+}
+
+input[type=text] {
+    color: red;
+}
+
+input[type=submit] {
+   color: blue;
+   border: none;
+}
+.urlInput {
+  margin-top: 20px
 }
 
 .hidden {
