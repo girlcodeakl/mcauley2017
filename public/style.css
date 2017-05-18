@@ -12,11 +12,12 @@ h1 {
 }
 
 .message {
-  color: #468966;
+  color: #000;
   margin: 20px;
   padding: 20px;
   border: 2px solid white;
   border-radius: 5px;
+  font-weight: bold;
 }
 
 .nav-bar {
@@ -39,7 +40,8 @@ h1 {
 }
 
 img {
-  width: 400px;
+  width: 200px;
+  margin-top: 10px
 }
 
 input[type=text] {
@@ -56,4 +58,12 @@ input[type=submit] {
 
 .hidden {
   display: none
+}
+.comment{
+border: 8px solid #fff;
+background-color: #afeeee;
+margin:20px;
+padding: 10px;
+border-radius: 5px;
+
 }
