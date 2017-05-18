@@ -21,16 +21,22 @@ h1 {
 
 .nav-bar {
   color: white;
-  background-color: black;
+  background-color: grey;
   max-width: 400px;
   margin: auto;
 
 }
 .nav-bar a {
-  color: white;
+  color: turquoise;
   margin:10px;
   display: inline-block;
   text-decoration:none;
+
+}
+
+.nav-bar a:hover {
+  color: white;
+
 }
 
 .time {
@@ -38,6 +44,15 @@ h1 {
 
 }
 
+
 img {
   width: 400px;
+}
+
+input:hover {
+  background-color: #E2D9D9;
+}
+
+button:active {
+  background-color: yellow;
 }
