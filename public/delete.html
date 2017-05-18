@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+</head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+      <div class="nav-bar">
+          <a href="feed.html">feed</a>
+          <a href="post.html">post something</a>
+          <a href="index.html"> homepage</a>
+      </div>
+      <form method="post" action="/delete" class="myform">
+          <input type="text" name="message" placeholder="Post Id goes here" class="messageInput">
+          <input type="password" name="author" placeholder="Password goes here" class="authorInput">
+          <input type="submit" value="Submit">
+      </form>
+        <div class="note"></div>
+        <script>
+        var myCoolFunction = function (e) {
+          $(".note").text("Deleting message...");
+          var data = {};
+          data.postId = $(".messageInput").val();
+          data.password = $(".authorInput").val();
+      $.post( "/delete" , data );
+  e.preventDefault();
+
+  }
+
+
+    $(".myform").on("submit", myCoolFunction);
+        </script>
+  </body>
+</html>
