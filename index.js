@@ -31,6 +31,20 @@ app.get('/post', function (req, res) {
    var post = posts.find(filterFunction);
    res.send(post);
 });
+var commentHandler = function (req, res) {
+    console.log(req.body.postId);
+    console.log(req.body.comment);//code goes here
+   res.send("ok");
+   var searchId = req.query.postId;
+   console.log("Searching for post " + searchId);
+   var filterFunction = function (post) {
+      return post.id == searchId;
+   };
+   var post = posts.find(filterFunction);
+   post.comments.push(req.body.comment)
+   db.posts.update({id: postId}, post)
+}
+app.post("/comment", commentHandler);
 
 var deleteHandler = function (req, res) {
   if(req.body.password==="Welcome1"){
@@ -49,6 +63,7 @@ app.post("/delete", deleteHandler);
 var saveNewPost = function (request, response) {
   console.log(request.body.message); //write it on the command prompt so we can see
   console.log(request.body.author); //write it on the command prompt so we can see
+
 
   var post = {}
   post.id = Math.round(Math.random() * 10000);

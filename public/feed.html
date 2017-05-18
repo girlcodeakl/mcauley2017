@@ -28,21 +28,31 @@ var displayMessage = function(post) {
   postElement.append(timeElement);
   var imageElement = $('<img src="'+ post.image +'">');
   postElement.append(imageElement);
+  var commentlist = $('<div ></div>');
+  postElement.append(commentlist);
   post.comments.forEach(function (comment) {
     //the code in here will run for each comment
     var commentElement = $('<div class = "comment">' + comment + '</div>');
-    postElement.append(commentElement);
+    commentlist.append(commentElement);
+
     console.log(comment); //look at your developer tools to see the comments appear
 })
   $(".message-list").append(postElement);
   var  idElement  = $('<div>' + post.id +'</div>');
 postElement.append(idElement);
-var inputElement = $('<input type="text">');
+var inputElement = $('<input type="text" class="commentInput">');
 postElement.append(inputElement);
 var buttonElement = $('<button> Post </button>');
 postElement.append(buttonElement);
 postElement.delegate("button", "click", function() {
-    alert(postElement.find("input").val());
+    var data = {};
+data.postId = post.id;
+data.comment = $(".commentInput").val(); //fixme: replace this with the actual comment
+$.post("/comment", data);
+var commentElement = $('<div>' +  $(".commentInput").val() + '</div>');
+commentlist.append(commentElement);
+console.log("i asked the server to save your comment");
+console.log(data);
 });
 }
 
