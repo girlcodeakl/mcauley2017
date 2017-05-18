@@ -32,12 +32,19 @@ h1 {
   margin:20px;
   display: inline-block;
   text-decoration:none;
+
+}
+
+.nav-bar a:hover {
+  color: white;
+
 }
 
 .time {
   color: #894444;
 
 }
+
 
 img {
   width: 200px;
@@ -66,4 +73,12 @@ margin:20px;
 padding: 10px;
 border-radius: 5px;
 
+}
+
+input:hover {
+  background-color: #E2D9D9;
+}
+
+button:active {
+  background-color: yellow;
 }
