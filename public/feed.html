@@ -23,14 +23,14 @@
 var displayMessage = function(post) {
   var postElement = $('<div class="message">' + post.message + '</div>');
   var authorElement = $('<div>' + post.author + '</div>');
-  postElement.append(authorElement);
-  var imageElement = $('<img src="'+ post.image +'">');
-  postElement.append(imageElement);
+  postElement.prepend(authorElement);
   var timeElement = $('<div class="time">'+ $.format.prettyDate(post.time) +'</div>');
   postElement.append(timeElement);
+  var imageElement = $('<img src="'+ post.image +'">');
+  postElement.append(imageElement);
   post.comments.forEach(function (comment) {
     //the code in here will run for each comment
-    var commentElement = $('<div>' + comment + '</div>');
+    var commentElement = $('<div class = "comment">' + comment + '</div>');
     postElement.append(commentElement);
     console.log(comment); //look at your developer tools to see the comments appear
 })
