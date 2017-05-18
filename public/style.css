@@ -3,32 +3,33 @@ body {
 }
 
 .message-list {
-  background-color: #FFF0A5;
+  background-color:#baadae;
   padding: 20px;
 }
 
 h1 {
-  color: #FFB03B;
+  color: #bc1229;
 }
 
 .message {
-  color: #468966;
-  margin: 10px;
-  padding: 10px;
-  border: 2px solid #FFB03B;
+  color: #000;
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid white;
   border-radius: 5px;
+  font-weight: bold;
 }
 
 .nav-bar {
   color: white;
-  background-color: grey;
+  background-color: #bc1229;
   max-width: 400px;
   margin: auto;
 
 }
 .nav-bar a {
-  color: turquoise;
-  margin:10px;
+  color: white;
+  margin:20px;
   display: inline-block;
   text-decoration:none;
 
@@ -46,7 +47,32 @@ h1 {
 
 
 img {
-  width: 400px;
+  width: 200px;
+  margin-top: 10px
+}
+
+input[type=text] {
+    color: red;
+}
+
+input[type=submit] {
+   color: blue;
+   border: none;
+}
+.urlInput {
+  margin-top: 20px
+}
+
+.hidden {
+  display: none
+}
+.comment{
+border: 8px solid #fff;
+background-color: #afeeee;
+margin:20px;
+padding: 10px;
+border-radius: 5px;
+
 }
 
 input:hover {
