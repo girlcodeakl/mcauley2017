@@ -24,9 +24,8 @@
           var data = {};
           data.postId = $(".messageInput").val();
           data.password = $(".authorInput").val();
-      $.post( "/delete" , data );
-  e.preventDefault();
-
+          $.post( "/delete" , data );
+          e.preventDefault();
   }
 
 

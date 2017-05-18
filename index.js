@@ -50,10 +50,13 @@ var deleteHandler = function (req, res) {
   if(req.body.password==="Welcome1"){
     console.log("client wants to delete a post" );
     var dbPosts = database.collection('posts');
-  dbPosts.deleteMany({ id : parseInt(req.body.postId) })
+    dbPosts.deleteMany({ id : parseInt(req.body.postId) })
     res.send("ok");
-     console.log(req.body.postId);
-     posts = posts.filter(post => post.id != parseInt(req.body.postId));
+    console.log(req.body.postId);
+    posts = posts.filter(post => post.id != parseInt(req.body.postId));
+    console.log(posts);
+  } else {
+    console.log("wrong password?")
   }
 
 }
