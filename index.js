@@ -23,7 +23,7 @@ var sendPostsList = function (request, response) {
 app.get('/posts', sendPostsList);
 
 app.get('/post', function (req, res) {
-   var searchId = req.query.id;
+   var searchId = req.body.id;
    console.log("Searching for post " + searchId);
    var filterFunction = function (post) {
       return post.id == searchId;
@@ -31,18 +31,22 @@ app.get('/post', function (req, res) {
    var post = posts.find(filterFunction);
    res.send(post);
 });
+
 var commentHandler = function (req, res) {
     console.log(req.body.postId);
     console.log(req.body.comment);//code goes here
    res.send("ok");
-   var searchId = req.query.postId;
-   console.log("Searching for post " + searchId);
+   var postId = parseInt(req.body.postId);
+   console.log("Searching for post " + postId);
    var filterFunction = function (post) {
-      return post.id == searchId;
+      return post.id === postId;
    };
    var post = posts.find(filterFunction);
    post.comments.push(req.body.comment)
-   db.posts.update({id: postId}, post)
+
+   //and the database
+   var dbPosts = database.collection('posts');
+   dbPosts.update({id: postId}, post)
 }
 app.post("/comment", commentHandler);
 

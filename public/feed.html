@@ -49,7 +49,7 @@ postElement.delegate("button", "click", function() {
 data.postId = post.id;
 data.comment = $(".commentInput").val(); //fixme: replace this with the actual comment
 $.post("/comment", data);
-var commentElement = $('<div>' +  $(".commentInput").val() + '</div>');
+var commentElement = $('<div class = "comment">' +  $(".commentInput").val() + '</div>');
 commentlist.append(commentElement);
 console.log("i asked the server to save your comment");
 console.log(data);
